@@ -1,0 +1,56 @@
+*, *:is(::after, ::before) {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font: 1rem "Veranda", sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: nowrap;
+  background-color: #111;
+}
+body a {
+  isolation: isolate;
+  position: relative;
+  font-size: 2rem;
+  color: #fff;
+  background-image: linear-gradient(to bottom right, crimson, crimson, cyan, indigo, indigo);
+  text-decoration: none;
+  border-radius: 99px;
+  padding: 10px 30px;
+  z-index: 5;
+  transition: all 0.3s;
+}
+body a::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 99px;
+  background-image: linear-gradient(to bottom right, crimson, crimson, cyan, indigo, indigo);
+  filter: blur(5px);
+  transition: all 0.3s;
+  z-index: -1;
+}
+body a .link-background {
+  position: absolute;
+  inset: 1px;
+  background-color: #111;
+  border-radius: 99px;
+  transition: all 0.3s;
+  z-index: -1;
+}
+body a:hover::before {
+  inset: -5px;
+}
+body a:hover .link-background {
+  inset: 5px;
+}
+
+/*# sourceMappingURL=style.css.map */
